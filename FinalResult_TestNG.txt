@@ -1,0 +1,40 @@
+
+
+package automationframework;
+import pageObjects.LoginPage;
+import pageobjects.ErrorPage;
+
+public class VerifypageObjectModel{
+
+@Test
+
+public static void main(String[] args) {
+		
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.quidco.com");
+		
+		LoginPage login = new LoginPage(driver);
+		login.ClickOnjoinforfreeButton();
+		ErrorPage error = new ErrorPage(driver);
+		error.ResultMessage();
+
+		driver.quit();
+
+}
+
+}
+
+
+		
+		
+
+
+
+
+
+
+
+
+

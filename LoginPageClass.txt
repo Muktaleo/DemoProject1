@@ -1,0 +1,64 @@
+We shall be creating 2 test classes in one package-automationFramework
+1. LoginPage
+2. ErrorPage
+
+So, we will have 2 POM classes. 
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+package pageObjects;
+
+public class LoginPage{
+
+	WebDriver driver;
+
+
+	By firstname =By.id("first_name_join");
+	By sirname=By.id("last_name_join");
+	By email=By.id("new_email_join");
+	By password=By.id("new_password_join");
+	By joinforfreeButton=By.id("join-quidco-submit button");
+
+public LoginPage(WebDriver driver)
+{
+this.driver=driver;
+}
+
+
+
+public void LogintoQuadco(String fname,String sname,String eml,String pass)
+{
+driver.findElement(firstname).sendKeys(fname);
+driver.findElement(sirname).sendKeys(sname);
+driver.findElement(email).sendKeys(eml);
+driver.findElement(password).sendKeys(pass);
+driver.findElement(joinforfreButton).click();
+
+}
+
+public void typefirstname(String fid);
+{
+driver.findElement(firstname).sendKeys(fid);
+}
+
+
+public void typesirname(String sname);
+{
+driver.findElement(surname).sendKeys(sname);
+}
+
+public void typeemail(String eml);
+{
+driver.findElement(email).sendKeys(eml);
+}
+
+public void clickOnjoinforfreeButton()
+{
+driver.findElement(joinforfreeButton).click();
+System.out.printn("Welcome,Successfully logged into Quidco");	
+
+}
+
+}

@@ -1,0 +1,34 @@
+package pageObjects;
+
+public class Errorpage{
+
+public static void main(String[] args) {
+	
+	WebDriver driver = new FirefoxDriver();
+
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.get("https://www.quidco.com");
+
+	driver.findElement(By.id("new_email_join"));
+	driver.findElement(By.id("join-quidco-submit button")).click();
+	Thread.sleep(2000);
+
+public void ResultMessage()
+{
+
+	String actual_error = driver.findElement(By.id("errrid")).getText();
+	String expected_error="Email id is required";
+
+//Type1
+Assert.asertEquals(actual_error,expected_error);
+
+//type2
+Assert.assertTrue(actual_error.contains("Email id is required"));
+
+System.out.println(:ResultMessage":  "", "Technical test completed")
+
+}
+
+
+}
+
